@@ -1,0 +1,300 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+  }
+  
+  h1, h2 {
+    color: #333;
+    font-weight: 600;
+    text-align: center;
+  }
+  
+ 
+  
+  /* Navigation Bar */
+  .navbar {
+
+    background: linear-gradient(to right, #2c3e50, #4ca1af);
+    padding: 10px 20px; /* Reduced padding for a slimmer navbar */
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .navbar-nav .nav-link {
+    font-size: 1rem;
+    color: #fff;
+    margin: 0 10px;
+    transition: color 0.3s ease; /* Smooth hover effect */
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #ffc107;
+    text-decoration: underline;
+  }
+  
+  /* Home Page */
+  .fullscreen-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    background: linear-gradient(to bottom, #4ca1af, #2c3e50);
+    color: #fff;
+    text-align: center;
+    animation: gradient-scroll 6s infinite; /* Animated background gradient */
+  }
+  
+  @keyframes gradient-scroll {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .fullscreen-section h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .fullscreen-section p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+  
+  .fullscreen-section .btn {
+    padding: 10px 20px;
+  }
+  
+  .fullscreen-section .animated-image {
+    width: 300px;
+    margin-top: 20px;
+    border-radius: 15px;
+    animation: fadeIn 2s ease-in; /* Smooth fade-in effect */
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Manage Categories Page */
+  .table {
+    background-color: #212529;
+    color: #fff;
+  }
+  
+  .table thead th {
+    background-color: #343a40;
+    color: #ffc107;
+  }
+  
+  .table tbody tr:hover {
+    background-color: #495057;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
+  .btn-danger {
+    background-color: #dc3545;
+    border: none;
+  }
+  
+  .btn-danger:hover {
+    background-color: #b71c1c;
+  }
+  
+  /* Login & Sign Up Page */
+  .login-container, .signup-container {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .login-container h2, .signup-container h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+  }
+  
+  .footer-text {
+    margin-top: 15px;
+    text-align: center;
+  }
+  
+  .footer-text a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .footer-text a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Form Styling */
+  .form-label {
+    font-weight: bold;
+  }
+  
+  .form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  .btn {
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .fullscreen-section h1 {
+      font-size: 2rem;
+    }
+  
+    .fullscreen-section p {
+      font-size: 1rem;
+    }
+  
+    .login-container, .signup-container {
+      margin-top: 50px;
+    }
+  }
+
+  
+  /* Login and Sign Up Containers */
+  .auth-container {
+    max-width: 100%;
+    margin: 0 auto;
+
+    width: 100%;
+    background: linear-gradient(to right, #ffffff, #e3f2fd); /* Gradient effect inside container */
+    border-radius: 15px;
+    padding: 30px 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    animation: slideIn 1s ease-in-out; /* Sliding animation */
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateY(-50%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .auth-container h2 {
+    font-size: 2rem;
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+    background: linear-gradient(to right, #4ca1af, #2c3e50); /* Gradient text */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .auth-container .form-control {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .auth-container .form-control:focus {
+    border-color: #4ca1af;
+    box-shadow: 0 0 5px rgba(76, 161, 175, 0.5);
+  }
+  
+  .auth-container .btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(to right, #4ca1af, #2c3e50);
+    color: #fff;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .auth-container .btn:hover {
+    background: linear-gradient(to right, #2c3e50, #4ca1af);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Additional Elements */
+  .auth-container .forgot-password {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.9rem;
+  }
+  
+  .auth-container .forgot-password a {
+    color: #4ca1af;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .auth-container .forgot-password a:hover {
+    color: #2c3e50;
+  }
+  
+  .auth-container .footer-text {
+    margin-top: 15px;
+    text-align: center;
+  }
+  
+  .auth-container .footer-text a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .auth-container .footer-text a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .auth-container {
+      margin: 20px;
+      padding: 20px;
+    }
+  }
+    
+  .manage-category{
+    margin-top: 5%;
+  }
