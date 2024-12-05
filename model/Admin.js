@@ -1,4 +1,4 @@
-import pool from "../db/dbConfig";
+import pool from "../db/dbConfig.js";
 
 export default class Admin{
     constructor(id, email, password){
@@ -12,7 +12,7 @@ export default class Admin{
         return new Promise((resolve, reject) => {
             pool.getConnection((err, con) => {
                 if(!err){
-                    let sql = "select * from user where email = ? and password = ?";
+                    let sql = "select * from user where email = ? and paswword = ?";
                     con.query(sql, [this.email, this.password], (err, result) => {
                         con.release();
                         if(!err){
@@ -28,3 +28,4 @@ export default class Admin{
         })
     }
 }
+

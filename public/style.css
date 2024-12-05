@@ -97,13 +97,15 @@ body {
   
   /* Manage Categories Page */
   .table {
-    background-color: #212529;
+    background-color: beige;
     color: #fff;
   }
   
   .table thead th {
-    background-color: #343a40;
-    color: #ffc107;
+    background-color: cadetblue;
+    color: white;
+    font-size: large;
+    font-weight:normal;
   }
   
   .table tbody tr:hover {
@@ -120,7 +122,7 @@ body {
   }
   
   .btn-danger {
-    background-color: #dc3545;
+    background-color: darksalmon;
     border: none;
   }
   

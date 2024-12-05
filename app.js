@@ -18,7 +18,12 @@ app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(session({secret:"hhadgsfhjgdjfhmndbbc"}));
+
+app.use(session({
+  secret: 'hghjghfgdfsdsxfdfcbvvmnbjhj', 
+  resave: false,  
+  saveUninitialized: true, 
+}));
 
 app.use('/admin', AdminRouter);
 app.use('/category', CategoryRouter);
