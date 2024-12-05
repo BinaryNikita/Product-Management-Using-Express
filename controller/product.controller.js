@@ -60,20 +60,20 @@ export const addProduct = (request, response, next) => {
   };
   
   export const deleteProduct = (request, response, next) => {
-    let {} = request.body;
-    console.log("Request received for deleting category with ID:", categoryId);
+    let {productId} = request.body;
+    console.log("Request received for deleting product with ID:", productId);
     pool.getConnection((err, con) => {
         if(err){
             response.send("Some error occured in the mysql connection");
         } else{
-            const query = "delete from category where c_id = ?";
-            con.query(query, [categoryId], (err, result) => {
+            const query = "delete from products where p_id = ?";
+            con.query(query, [productId], (err, result) => {
                 con.release();
               if(err){
                 response.send("Some error occurred in delete category");
                 console.log(err);
               } else{
-                return  response.redirect("/category/manage-category");
+                return  response.redirect("/product/manage-product");
 
               }
             });
