@@ -10,7 +10,9 @@ export const homePageAction = ((request, response, next) => {
     } else{
          response.redirect("/admin/sign-in");
     }
-})
+});
+
+
 export const signInPage = (request, response, next)=>{
     response.render("sign-in.ejs");
 };
@@ -27,6 +29,7 @@ export const signInAction = (request, response, next) => {
             request.session.isLoggedIn = true;
             response.redirect("/admin/home");
            } else{
+            console.log(err);
             response.redirect("/admin/sign-in");
            }
         }).catch(err => {
@@ -52,14 +55,14 @@ export const signUpPage = (request, response, next) => {
 
 export const signUpAction = (request, response, next) => {
     let {name, email, password} = request.body;
+    console.log(name + "  " + email + "  " + password);
     User.checkIfEmailExist(email).then((result) => {
         if(result.length > 0){
-          response.redirect("/admin/sign-up");
+          response.render("sign-up.ejs");
         } else{
             const newUser = new User(null, name, email, password);
-            newUser.save().then((result) => {
-
-                    response.redirect("admin/sign-in");
+            newUser.saveUser().then((result) => {
+                    response.render("sign-in.ejs");
 
             }).catch((err) => {
                 console.log(err);

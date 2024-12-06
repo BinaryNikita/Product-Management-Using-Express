@@ -1,6 +1,9 @@
 import express, { request, response } from "express";
 import pool from "../db/dbConfig.js";
 
+
+
+
 export const manageCategory = (request, response, next) => {
 
     pool.getConnection((err, con) => {

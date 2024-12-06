@@ -18,6 +18,7 @@ export default class Admin{
                         if(!err){
                             resolve(result);
                         } else {
+                            console.log(err);
                             reject(err);
                         }
                     });

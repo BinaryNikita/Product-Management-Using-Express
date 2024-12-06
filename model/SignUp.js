@@ -34,7 +34,7 @@ export default class User{
 
 
 
-    static saveUser(){
+     saveUser(){
         return new Promise((resolve, reject) => {
 
             pool.getConnection((err, con) => {
