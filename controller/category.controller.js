@@ -70,5 +70,48 @@ export const deleteCategory = (request, response, next) => {
     });
 }
 
+export const updateCategoryPage = (request, response, next) => {
+    let categoryId = request.params.categoryId;
+    pool.getConnection((err, con) => {
+          if(!err){
+            let sql = "select * from category where c_id = ?";
+            con.query(sql, [categoryId], (err, result) => {
+                if(!err){
+                    console.log(result);
+                    return response.render("update-category.ejs", {category: result[0]});
+                }else{
+                    console.log(err);
+                }
+            })
+          } else{
+            console.log("Error in connection : " + err);
+          }
+    });
+}
+
+export const updateCategoryAction = (request, response, next) => {
+    let {categoryId, categoryName} = request.body;
+    console.log(request.bdy);
+
+    pool.getConnection((err, con) => {
+        if(!err){
+            let sql = "update category set c_name = ? where c_id = ?";
+            con.query(sql, [categoryName, categoryId], (err, result) => {
+                if(result.affectedRows != 0){
+                    response.redirect('/category/manage-category');
+                } else{
+                    console.log("unable to update no data found");
+                }
+            })
+
+        } else{
+            console.log("Cannot get connection: " + err);
+        }
+    })
+
+
+
+}
+
 
 
